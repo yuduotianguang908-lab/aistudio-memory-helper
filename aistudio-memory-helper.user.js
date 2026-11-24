@@ -499,8 +499,8 @@
                 if (activityTimer) clearTimeout(activityTimer);
                 activityTimer = setTimeout(() => {
                     req.abort();
-                    reject(new Error('连接中断：连续 60 秒未收到任何新数据包'));
-                }, 60000);
+                    reject(new Error('连接中断：连续 300 秒未收到任何新数据包'));
+                }, 300000);
             };
 
             const processChunk = (rawText) => {
